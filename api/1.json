@@ -1,0 +1,47 @@
+{
+  "orders": [
+    
+  ],
+  "products": [
+    {
+      "id": 16,
+      "name": "Vízálló túrahátizsák",
+      "price": 89.99,
+      "description": "Robusztus és vízálló túrahátizsák, sok tárolóhellyel és kényelmes pántokkal.",
+      "image_url": "https://example.com/hikingbackpack.jpg",
+      "quantity": 7
+    },
+    {
+      "id": 17,
+      "name": "Üvegváza",
+      "price": 24.99,
+      "description": "Elegáns üvegváza, ideális díszítőelem a lakásban.",
+      "image_url": "https://example.com/vase.jpg",
+      "quantity": 23
+    },
+    {
+      "id": 18,
+      "name": "Játékkonzol",
+      "price": 299.99,
+      "description": "Legújabb generációs játékkonzol, lenyűgöző grafikával és gyors processzorral.",
+      "image_url": "https://example.com/gamingconsole.jpg",
+      "quantity": 12
+    },
+    {
+      "id": 19,
+      "name": "Ezüst nyaklánc",
+      "price": 59.99,
+      "description": "Ezüst nyaklánc, stílusos kialakítással és időtlen dizájnnal.",
+      "image_url": "https://example.com/necklace.jpg",
+      "quantity": 15
+    },
+    {
+      "id": 20,
+      "name": "Fényképezőgép",
+      "price": 449.99,
+      "description": "Professzionális digitális fényképezőgép, magas felbontású képekkel.",
+      "image_url": "https://example.com/camera.jpg",
+      "quantity": 8
+    }
+  ]
+}

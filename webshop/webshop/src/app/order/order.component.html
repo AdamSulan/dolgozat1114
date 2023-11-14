@@ -1,0 +1,39 @@
+<div class="card border-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header">Kosár</div>
+    <ng-container *ngIf="tetelek && tetelek.length!=0; else ures">
+        <div *ngFor="let tetel of tetelek" class="card border-dark mb-3">
+            <div class="card-body text-dark">
+                <h5 class="card-title">{{keresTermek(tetel.id).name}}</h5>
+                <div class="input-group input-group-sm mb-3">
+                    <input (change)="valtozas(tetel)" [(ngModel)]="tetel.db" min="1" max="{{keresTermek(tetel.id).quantity}}" type="number" class="form-control">
+                    <span class="input-group-text" id="inputGroup-size">
+                        dbx{{keresTermek(tetel.id).price}}={{tetel.db*keresTermek(tetel.id).price}} Euro
+                    </span>
+                </div>
+                <button (click)="tetelTorlese(tetel)" type="button" class="btn btn-secondary btn-sm">Tétel törlése</button>
+            </div>
+        </div>
+
+
+        <div class="form-floating mb-3">
+            <input [(ngModel)]="nev" type="text" class="form-control" id="floatingInput" placeholder="Teljes Név">
+            <label for="floatingInput">Név:</label>
+          </div>
+          <div class="form-floating">
+            <input [(ngModel)]="cim" type="text" class="form-control" id="floatingPassword" placeholder="Cím">
+            <label for="floatingPassword">Cím:</label>
+          </div>
+          <div class="form-check form-switch">
+            <input [(ngModel)]="beleegyezes" type="checkbox" class="form-check-input" id="flexSwitchCheck" required>
+            <label class="form-check-label" for="flexSwitchCheck">Mindenbe beleegyezek</label>
+          </div>
+
+
+        <h2 class="ms-3">Fizetendő: {{osszesen()}} Euro</h2>
+
+        <button (click)="order()" [disabled]="!beleegyezes" routerLink="/rendelesleadas" type="button" class="btn btn-secondary btn-sm" style="background-color: green;">
+            Megrendelés
+        </button>
+    </ng-container>
+    <ng-template #ures><p>A kosár üres!</p></ng-template>
+</div>

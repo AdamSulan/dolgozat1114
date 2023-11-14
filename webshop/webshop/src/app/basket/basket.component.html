@@ -1,0 +1,21 @@
+<div class="card border-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header">Kosár</div>
+    <ng-container *ngIf="tetelek && tetelek.length!=0; else ures">
+        <div *ngFor="let tetel of tetelek" class="card border-dark mb-3">
+            <div class="card-body text-dark">
+                <h5 class="card-title">{{keresTermek(tetel.id).name}}</h5>
+                <div class="input-group input-group-sm mb-3">
+                    <input (change)="valtozas(tetel)" [(ngModel)]="tetel.db" min="1" max="{{keresTermek(tetel.id).quantity}}" type="number" class="form-control">
+                    <span class="input-group-text" id="inputGroup-size">
+                        dbx{{keresTermek(tetel.id).price}}={{tetel.db*keresTermek(tetel.id).price}} Euro
+                    </span>
+                </div>
+                <button (click)="tetelTorlese(tetel)" type="button" class="btn btn-secondary btn-sm">Tétel törlése</button>
+            </div>
+        </div>
+
+        <h5 class="ms-3">Fizetendő: {{osszesen()}} Euro</h5>
+        <button routerLink="/rendelesleadas" type="button" class="btn btn-secondary btn-sm" style="background-color: green;">Kosár véglegesítése</button>
+    </ng-container>
+    <ng-template #ures><p>A kosár üres!</p></ng-template>
+</div>
